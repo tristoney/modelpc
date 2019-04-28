@@ -126,11 +126,16 @@
     <ClInclude Include="bus.h" />
     <ClInclude Include="memo.h" />
     <ClInclude Include="regi.h" />
+    <ClInclude Include="common.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bus.cpp" />
     <ClCompile Include="memo.cpp" />
     <ClCompile Include="regi.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="asm.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

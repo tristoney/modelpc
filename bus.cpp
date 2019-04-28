@@ -1,8 +1,7 @@
 #include "bus.h"
 
 
-
-bus::bus(int Data):data (0x0)
+bus::bus(string Data):data ()
 {
 	data = Data;
 }
@@ -12,12 +11,13 @@ bus::~bus()
 {
 }
 
-void WriteBus(int Data)
+
+void bus::WriteBus(string Data)
 {
 	this->data = Data;
 }
 
-int ReadBus()
+string bus::ReadBus()
 {
 	return data;
 }
