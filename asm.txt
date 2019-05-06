@@ -1,7 +1,8 @@
-mov AC 0x0
-mov DR 0x0
-add AC DR
-add DR 0x1
-cmp DR 0x64
-jne 0x3
+mov ra 0
+mov rb 1
+add ra rb
+add rb 1
+cmp rb 6
+jne 2
+sto 500 ra
 ret

@@ -15,27 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="regi.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="bus.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="common.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="memo.h">
+    <ClInclude Include="Memory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Processer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="regi.cpp">
+    <ClCompile Include="Memory.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="bus.cpp">
+    <ClCompile Include="Register.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="memo.cpp">
+    <ClCompile Include="Processer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

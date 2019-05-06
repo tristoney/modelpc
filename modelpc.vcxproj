@@ -123,15 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="bus.h" />
-    <ClInclude Include="memo.h" />
-    <ClInclude Include="regi.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="Processer.h" />
+    <ClInclude Include="Register.h" />
     <ClInclude Include="common.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bus.cpp" />
-    <ClCompile Include="memo.cpp" />
-    <ClCompile Include="regi.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="Processer.cpp" />
+    <ClCompile Include="Register.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
