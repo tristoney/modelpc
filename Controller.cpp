@@ -47,7 +47,7 @@ bool Controller::run_asm()
 		dst = instruction[1];
 	if ((int)instruction.size() == 3)
 		src = instruction[2];
-	if (op == "mov")//mov 指令 mov dst(寄存器） src（寄存器or立即数）
+	if (op == "mov")//mov 指令 mov dst(寄存器） src（寄存器or立即数or内存）
 	{
 		if (src[0] <= '9' && src[0] >= '0')//源为立即数
 		{
@@ -60,11 +60,28 @@ bool Controller::run_asm()
 			rb.SetData(ra.GetData());
 		else if (src == "rb")// mov ra rb
 			ra.SetData(rb.GetData());
+		else if (src[0] == '(')// mov dst (addr)
+		{
+			string::iterator iter;
+			for (iter = src.begin(); iter < src.end(); iter++)
+			{
+				if (*iter == '(' || ')')
+				{
+					src.erase(iter);
+					iter--;
+				}
+			}
+			int addr = atoi(src.c_str());
+			if (dst == "ra")
+				ra.SetData(atoi(memory.GetData(addr)[0].c_str()));
+			else if (dst == "rb")
+				rb.SetData(atoi(memory.GetData(addr)[0].c_str()));
+		}
 		cout << "mov " << dst << " " << src << endl;
 		rpc.inc();
 		return true;
 	}
-	
+
 	if (op == "add")//add指令 add dst(寄存器） src（寄存器or立即数）
 	{
 		if (src[0] <= '9' && src[0] >= '0')//源为立即数
@@ -219,6 +236,11 @@ bool Controller::run_asm()
 		rpc.inc();
 		rd.SetData(ra.GetData());
 		cout << "ret" << endl;
+		return true;
+	}
+
+	else
+	{
 		return false;
 	}
 }

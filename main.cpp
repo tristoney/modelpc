@@ -124,6 +124,7 @@ int main()
 					}
 					system("cls");
 					cout << "\n\n\n\nThe result is:" << rd.GetData() << endl;
+					//cout << "\n\nPress 0 to return previous menu." << endl;
 				}
 			}
 			else if (max_ins == 0)//ÎÞ´úÂë¶ÁÈë
