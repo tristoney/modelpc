@@ -56,7 +56,11 @@ void Processer::sub()
 void Processer::cmp()
 {
 	int flag = (reg_a == reg_b);
-	//cout << "compare flag is: " << flag << endl;
 	reg_ps.SetZF(flag);
-	//cout << "ZF = " << reg_ps.GetZF() << endl;
+}
+
+void Processer::Reset()
+{
+	SetRa(0); SetRb(0); SetRans(0);
+	reg_ps.Reset();
 }

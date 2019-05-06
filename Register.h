@@ -15,6 +15,7 @@ public:
 	int  GetData();//读寄存器数据
 	void SetData(int);//改变寄存器数据
 	string GetName();//得到寄存器名称
+	virtual void Reset();
 };
 
 class ProgramCounterReg :public Register//程序计数器类
@@ -23,7 +24,6 @@ public:
 	ProgramCounterReg(string name, int data);
 	~ProgramCounterReg();
 	void inc();
-	void reset();
 };
 
 class ProgramStatusReg :public Register

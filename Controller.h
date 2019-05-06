@@ -16,10 +16,11 @@ private:
 	Processer& processer;
 	Register& ra;
 	Register& rb;
+	Register& rd;
 	ProgramCounterReg& rpc;
 	ProgramStatusReg& rps;
 public:
-	Controller(Memory&, Processer&, Register&, Register&, ProgramCounterReg&, ProgramStatusReg&);
+	Controller(Memory&, Processer&, Register&, Register&, Register&, ProgramCounterReg&, ProgramStatusReg&);
 	~Controller();
 	int load_asm(string file_name);
 	bool run_asm();

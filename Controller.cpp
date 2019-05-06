@@ -1,8 +1,8 @@
 #include "Controller.h"
 
 
-Controller::Controller(Memory& memo, Processer& proc, Register& ra, Register& rb, ProgramCounterReg& rpc, ProgramStatusReg& rps)
-	:memory(memo),processer(proc),ra(ra),rb(rb),rpc(rpc),rps(rps)
+Controller::Controller(Memory& memo, Processer& proc, Register& ra, Register& rb, Register& rd, ProgramCounterReg& rpc, ProgramStatusReg& rps)
+	:memory(memo),processer(proc),ra(ra),rb(rb),rd(rd),rpc(rpc),rps(rps)
 {
 }
 
@@ -39,8 +39,6 @@ int Controller::load_asm(string file_name)
 
 bool Controller::run_asm()
 {
-	//cout << "Call run_asm" << endl;
-	//rps.Reset();
 	vector<string> instruction = memory.data[rpc.GetData()];
 	string op = instruction[0];
 	string dst = "";
@@ -219,6 +217,7 @@ bool Controller::run_asm()
 	if (op == "ret") //ret
 	{
 		rpc.inc();
+		rd.SetData(ra.GetData());
 		cout << "ret" << endl;
 		return false;
 	}

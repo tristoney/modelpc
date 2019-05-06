@@ -24,6 +24,7 @@ public:
 	void add();
 	void sub();
 	void cmp();
+	void Reset();
 };
 
 

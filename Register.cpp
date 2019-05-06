@@ -26,6 +26,11 @@ string Register::GetName()
 	return name;
 }
 
+void Register::Reset()
+{
+	SetData(0);
+}
+
 ProgramCounterReg::ProgramCounterReg(string name, int data):Register(name,data)
 {
 }
@@ -40,10 +45,6 @@ void ProgramCounterReg::inc()
 	SetData(d + 1);
 }
 
-void ProgramCounterReg::reset()
-{
-	SetData(0);
-}
 
 ProgramStatusReg::ProgramStatusReg(string name, int data, int cf, int zf, int sf, int of)
 	:Register(name,data),cf(cf),zf(zf),sf(sf),of(of)

@@ -4,5 +4,4 @@ add ra rb
 add rb 1
 cmp rb 6
 jne 2
-sto 500 ra
 ret
