@@ -65,7 +65,7 @@ int main()
 					for (int i = 0; i != max_ins; i = rpc.GetData())
 					{
 						cout << "Step " << cnt << "--> ";
-						controller.run_asm();
+						if (!controller.run_asm())	break;
 						cnt++;
 					}
 					cout << "\n\nThe final state of the registers are:" << endl;
@@ -98,7 +98,7 @@ int main()
 						{
 							system("cls");
 							cout << "Step " << cnt << "--> ";
-							controller.run_asm();
+							if (!controller.run_asm())	break;
 							cnt++;
 						}
 						else if (next == 2)

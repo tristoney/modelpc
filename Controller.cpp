@@ -236,7 +236,7 @@ bool Controller::run_asm()
 		rpc.inc();
 		rd.SetData(ra.GetData());
 		cout << "ret" << endl;
-		return true;
+		return false;
 	}
 
 	else
